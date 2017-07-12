@@ -70,6 +70,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DbSchema.sql" />
     <Content Include="flagAdditions\additions.txt" />
     <Content Include="flagAdditions\png\256\XK.png" />
     <Content Include="flagAdditions\png\512\AS.png" />

@@ -107,7 +107,7 @@ WHERE [flag] = @iso_country2
 	SELECT
 		 flag
 		,country
-		,country_uid
+		,country_id
 		,width
 		,height
 		,b64
@@ -138,7 +138,7 @@ WHERE [flag] = @iso_country2
 SELECT 
 	 flag
 	,country
-	,country_uid
+	,country_id
 	,width
 	,height
 	--,CEILING(width * rMIN) AS wRedim
@@ -216,7 +216,7 @@ ORDER BY flag
 
 
             string flag = flag512;
-
+            InsertFlags(flag);
 
 
 
