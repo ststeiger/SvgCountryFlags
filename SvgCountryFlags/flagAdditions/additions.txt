@@ -1,0 +1,5 @@
+﻿
+https://github.com/emcrisostomo/flags
+https://github.com/hjnilsson/country-flags
+
+Additions image source: Wikipedia.

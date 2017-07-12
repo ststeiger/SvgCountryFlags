@@ -1,0 +1,867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A9CD9B1-2A0B-4F69-AD68-8F0748B21D10}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlagCounter</RootNamespace>
+    <AssemblyName>FlagCounter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="images\png\256\AD.png" />
+    <Content Include="images\png\256\AE.png" />
+    <Content Include="images\png\256\AF.png" />
+    <Content Include="images\png\256\AG.png" />
+    <Content Include="images\png\256\AI.png" />
+    <Content Include="images\png\256\AL.png" />
+    <Content Include="images\png\256\AM.png" />
+    <Content Include="images\png\256\AO.png" />
+    <Content Include="images\png\256\AQ.png" />
+    <Content Include="images\png\256\AR.png" />
+    <Content Include="images\png\256\AS.png" />
+    <Content Include="images\png\256\AT.png" />
+    <Content Include="images\png\256\AU.png" />
+    <Content Include="images\png\256\AW.png" />
+    <Content Include="images\png\256\AX.png" />
+    <Content Include="images\png\256\AZ.png" />
+    <Content Include="images\png\256\BA.png" />
+    <Content Include="images\png\256\BB.png" />
+    <Content Include="images\png\256\BD.png" />
+    <Content Include="images\png\256\BE.png" />
+    <Content Include="images\png\256\BF.png" />
+    <Content Include="images\png\256\BG.png" />
+    <Content Include="images\png\256\BH.png" />
+    <Content Include="images\png\256\BI.png" />
+    <Content Include="images\png\256\BJ.png" />
+    <Content Include="images\png\256\BL.png" />
+    <Content Include="images\png\256\BM.png" />
+    <Content Include="images\png\256\BN.png" />
+    <Content Include="images\png\256\BO.png" />
+    <Content Include="images\png\256\BQ.png" />
+    <Content Include="images\png\256\BR.png" />
+    <Content Include="images\png\256\BS.png" />
+    <Content Include="images\png\256\BT.png" />
+    <Content Include="images\png\256\BV.png" />
+    <Content Include="images\png\256\BW.png" />
+    <Content Include="images\png\256\BY.png" />
+    <Content Include="images\png\256\BZ.png" />
+    <Content Include="images\png\256\CA.png" />
+    <Content Include="images\png\256\CC.png" />
+    <Content Include="images\png\256\CD.png" />
+    <Content Include="images\png\256\CF.png" />
+    <Content Include="images\png\256\CG.png" />
+    <Content Include="images\png\256\CH.png" />
+    <Content Include="images\png\256\CI.png" />
+    <Content Include="images\png\256\CK.png" />
+    <Content Include="images\png\256\CL.png" />
+    <Content Include="images\png\256\CM.png" />
+    <Content Include="images\png\256\CN.png" />
+    <Content Include="images\png\256\CO.png" />
+    <Content Include="images\png\256\CR.png" />
+    <Content Include="images\png\256\CU.png" />
+    <Content Include="images\png\256\CV.png" />
+    <Content Include="images\png\256\CW.png" />
+    <Content Include="images\png\256\CX.png" />
+    <Content Include="images\png\256\CY.png" />
+    <Content Include="images\png\256\CZ.png" />
+    <Content Include="images\png\256\DE.png" />
+    <Content Include="images\png\256\DJ.png" />
+    <Content Include="images\png\256\DK.png" />
+    <Content Include="images\png\256\DM.png" />
+    <Content Include="images\png\256\DO.png" />
+    <Content Include="images\png\256\DZ.png" />
+    <Content Include="images\png\256\EC.png" />
+    <Content Include="images\png\256\EE.png" />
+    <Content Include="images\png\256\EG.png" />
+    <Content Include="images\png\256\EH.png" />
+    <Content Include="images\png\256\ER.png" />
+    <Content Include="images\png\256\ES.png" />
+    <Content Include="images\png\256\ET.png" />
+    <Content Include="images\png\256\EU.png" />
+    <Content Include="images\png\256\FI.png" />
+    <Content Include="images\png\256\FJ.png" />
+    <Content Include="images\png\256\FK.png" />
+    <Content Include="images\png\256\FM.png" />
+    <Content Include="images\png\256\FO.png" />
+    <Content Include="images\png\256\FR.png" />
+    <Content Include="images\png\256\GA.png" />
+    <Content Include="images\png\256\GB.png" />
+    <Content Include="images\png\256\GD.png" />
+    <Content Include="images\png\256\GE.png" />
+    <Content Include="images\png\256\GF.png" />
+    <Content Include="images\png\256\GG.png" />
+    <Content Include="images\png\256\GH.png" />
+    <Content Include="images\png\256\GI.png" />
+    <Content Include="images\png\256\GL.png" />
+    <Content Include="images\png\256\GM.png" />
+    <Content Include="images\png\256\GN.png" />
+    <Content Include="images\png\256\GP.png" />
+    <Content Include="images\png\256\GQ.png" />
+    <Content Include="images\png\256\GR.png" />
+    <Content Include="images\png\256\GS.png" />
+    <Content Include="images\png\256\GT.png" />
+    <Content Include="images\png\256\GU.png" />
+    <Content Include="images\png\256\GW.png" />
+    <Content Include="images\png\256\GY.png" />
+    <Content Include="images\png\256\HK.png" />
+    <Content Include="images\png\256\HM.png" />
+    <Content Include="images\png\256\HN.png" />
+    <Content Include="images\png\256\HR.png" />
+    <Content Include="images\png\256\HT.png" />
+    <Content Include="images\png\256\HU.png" />
+    <Content Include="images\png\256\ID.png" />
+    <Content Include="images\png\256\IE.png" />
+    <Content Include="images\png\256\IL.png" />
+    <Content Include="images\png\256\IM.png" />
+    <Content Include="images\png\256\IN.png" />
+    <Content Include="images\png\256\IO.png" />
+    <Content Include="images\png\256\IQ.png" />
+    <Content Include="images\png\256\IR.png" />
+    <Content Include="images\png\256\IS.png" />
+    <Content Include="images\png\256\IT.png" />
+    <Content Include="images\png\256\JE.png" />
+    <Content Include="images\png\256\JM.png" />
+    <Content Include="images\png\256\JO.png" />
+    <Content Include="images\png\256\JP.png" />
+    <Content Include="images\png\256\KE.png" />
+    <Content Include="images\png\256\KG.png" />
+    <Content Include="images\png\256\KH.png" />
+    <Content Include="images\png\256\KI.png" />
+    <Content Include="images\png\256\KM.png" />
+    <Content Include="images\png\256\KN.png" />
+    <Content Include="images\png\256\KP.png" />
+    <Content Include="images\png\256\KR.png" />
+    <Content Include="images\png\256\KW.png" />
+    <Content Include="images\png\256\KY.png" />
+    <Content Include="images\png\256\KZ.png" />
+    <Content Include="images\png\256\LA.png" />
+    <Content Include="images\png\256\LB.png" />
+    <Content Include="images\png\256\LC.png" />
+    <Content Include="images\png\256\LI.png" />
+    <Content Include="images\png\256\LK.png" />
+    <Content Include="images\png\256\LR.png" />
+    <Content Include="images\png\256\LS.png" />
+    <Content Include="images\png\256\LT.png" />
+    <Content Include="images\png\256\LU.png" />
+    <Content Include="images\png\256\LV.png" />
+    <Content Include="images\png\256\LY.png" />
+    <Content Include="images\png\256\MA.png" />
+    <Content Include="images\png\256\MC.png" />
+    <Content Include="images\png\256\MD.png" />
+    <Content Include="images\png\256\ME.png" />
+    <Content Include="images\png\256\MF.png" />
+    <Content Include="images\png\256\MG.png" />
+    <Content Include="images\png\256\MH.png" />
+    <Content Include="images\png\256\MK.png" />
+    <Content Include="images\png\256\ML.png" />
+    <Content Include="images\png\256\MM.png" />
+    <Content Include="images\png\256\MN.png" />
+    <Content Include="images\png\256\MO.png" />
+    <Content Include="images\png\256\MP.png" />
+    <Content Include="images\png\256\MQ.png" />
+    <Content Include="images\png\256\MR.png" />
+    <Content Include="images\png\256\MS.png" />
+    <Content Include="images\png\256\MT.png" />
+    <Content Include="images\png\256\MU.png" />
+    <Content Include="images\png\256\MV.png" />
+    <Content Include="images\png\256\MW.png" />
+    <Content Include="images\png\256\MX.png" />
+    <Content Include="images\png\256\MY.png" />
+    <Content Include="images\png\256\MZ.png" />
+    <Content Include="images\png\256\NA.png" />
+    <Content Include="images\png\256\NC.png" />
+    <Content Include="images\png\256\NE.png" />
+    <Content Include="images\png\256\NF.png" />
+    <Content Include="images\png\256\NG.png" />
+    <Content Include="images\png\256\NI.png" />
+    <Content Include="images\png\256\NL.png" />
+    <Content Include="images\png\256\NO.png" />
+    <Content Include="images\png\256\NP.png" />
+    <Content Include="images\png\256\NR.png" />
+    <Content Include="images\png\256\NU.png" />
+    <Content Include="images\png\256\NZ.png" />
+    <Content Include="images\png\256\OM.png" />
+    <Content Include="images\png\256\PA.png" />
+    <Content Include="images\png\256\PE.png" />
+    <Content Include="images\png\256\PF.png" />
+    <Content Include="images\png\256\PG.png" />
+    <Content Include="images\png\256\PH.png" />
+    <Content Include="images\png\256\PK.png" />
+    <Content Include="images\png\256\PL.png" />
+    <Content Include="images\png\256\PM.png" />
+    <Content Include="images\png\256\PN.png" />
+    <Content Include="images\png\256\PR.png" />
+    <Content Include="images\png\256\PS.png" />
+    <Content Include="images\png\256\PT.png" />
+    <Content Include="images\png\256\PW.png" />
+    <Content Include="images\png\256\PY.png" />
+    <Content Include="images\png\256\QA.png" />
+    <Content Include="images\png\256\RE.png" />
+    <Content Include="images\png\256\RO.png" />
+    <Content Include="images\png\256\RS.png" />
+    <Content Include="images\png\256\RU.png" />
+    <Content Include="images\png\256\RW.png" />
+    <Content Include="images\png\256\SA.png" />
+    <Content Include="images\png\256\SB.png" />
+    <Content Include="images\png\256\SC.png" />
+    <Content Include="images\png\256\SD.png" />
+    <Content Include="images\png\256\SE.png" />
+    <Content Include="images\png\256\SG.png" />
+    <Content Include="images\png\256\SH.png" />
+    <Content Include="images\png\256\SI.png" />
+    <Content Include="images\png\256\SJ.png" />
+    <Content Include="images\png\256\SK.png" />
+    <Content Include="images\png\256\SL.png" />
+    <Content Include="images\png\256\SM.png" />
+    <Content Include="images\png\256\SN.png" />
+    <Content Include="images\png\256\SO.png" />
+    <Content Include="images\png\256\SR.png" />
+    <Content Include="images\png\256\SS.png" />
+    <Content Include="images\png\256\ST.png" />
+    <Content Include="images\png\256\SV.png" />
+    <Content Include="images\png\256\SX.png" />
+    <Content Include="images\png\256\SY.png" />
+    <Content Include="images\png\256\SZ.png" />
+    <Content Include="images\png\256\TC.png" />
+    <Content Include="images\png\256\TD.png" />
+    <Content Include="images\png\256\TF.png" />
+    <Content Include="images\png\256\TG.png" />
+    <Content Include="images\png\256\TH.png" />
+    <Content Include="images\png\256\TJ.png" />
+    <Content Include="images\png\256\TK.png" />
+    <Content Include="images\png\256\TL.png" />
+    <Content Include="images\png\256\TM.png" />
+    <Content Include="images\png\256\TN.png" />
+    <Content Include="images\png\256\TO.png" />
+    <Content Include="images\png\256\TR.png" />
+    <Content Include="images\png\256\TT.png" />
+    <Content Include="images\png\256\TV.png" />
+    <Content Include="images\png\256\TW.png" />
+    <Content Include="images\png\256\TZ.png" />
+    <Content Include="images\png\256\UA.png" />
+    <Content Include="images\png\256\UG.png" />
+    <Content Include="images\png\256\UM.png" />
+    <Content Include="images\png\256\US.png" />
+    <Content Include="images\png\256\UY.png" />
+    <Content Include="images\png\256\UZ.png" />
+    <Content Include="images\png\256\VA.png" />
+    <Content Include="images\png\256\VC.png" />
+    <Content Include="images\png\256\VE.png" />
+    <Content Include="images\png\256\VG.png" />
+    <Content Include="images\png\256\VI.png" />
+    <Content Include="images\png\256\VN.png" />
+    <Content Include="images\png\256\VU.png" />
+    <Content Include="images\png\256\WF.png" />
+    <Content Include="images\png\256\WS.png" />
+    <Content Include="images\png\256\XK.png" />
+    <Content Include="images\png\256\YE.png" />
+    <Content Include="images\png\256\YT.png" />
+    <Content Include="images\png\256\ZA.png" />
+    <Content Include="images\png\256\ZM.png" />
+    <Content Include="images\png\256\ZW.png" />
+    <Content Include="images\png\512\AD.png" />
+    <Content Include="images\png\512\AE.png" />
+    <Content Include="images\png\512\AF.png" />
+    <Content Include="images\png\512\AG.png" />
+    <Content Include="images\png\512\AI.png" />
+    <Content Include="images\png\512\AL.png" />
+    <Content Include="images\png\512\AM.png" />
+    <Content Include="images\png\512\AO.png" />
+    <Content Include="images\png\512\AQ.png" />
+    <Content Include="images\png\512\AR.png" />
+    <Content Include="images\png\512\AS.png" />
+    <Content Include="images\png\512\AT.png" />
+    <Content Include="images\png\512\AU.png" />
+    <Content Include="images\png\512\AW.png" />
+    <Content Include="images\png\512\AX.png" />
+    <Content Include="images\png\512\AZ.png" />
+    <Content Include="images\png\512\BA.png" />
+    <Content Include="images\png\512\BB.png" />
+    <Content Include="images\png\512\BD.png" />
+    <Content Include="images\png\512\BE.png" />
+    <Content Include="images\png\512\BF.png" />
+    <Content Include="images\png\512\BG.png" />
+    <Content Include="images\png\512\BH.png" />
+    <Content Include="images\png\512\BI.png" />
+    <Content Include="images\png\512\BJ.png" />
+    <Content Include="images\png\512\BL.png" />
+    <Content Include="images\png\512\BM.png" />
+    <Content Include="images\png\512\BN.png" />
+    <Content Include="images\png\512\BO.png" />
+    <Content Include="images\png\512\BQ.png" />
+    <Content Include="images\png\512\BR.png" />
+    <Content Include="images\png\512\BS.png" />
+    <Content Include="images\png\512\BT.png" />
+    <Content Include="images\png\512\BV.png" />
+    <Content Include="images\png\512\BW.png" />
+    <Content Include="images\png\512\BY.png" />
+    <Content Include="images\png\512\BZ.png" />
+    <Content Include="images\png\512\CA.png" />
+    <Content Include="images\png\512\CC.png" />
+    <Content Include="images\png\512\CD.png" />
+    <Content Include="images\png\512\CF.png" />
+    <Content Include="images\png\512\CG.png" />
+    <Content Include="images\png\512\CH.png" />
+    <Content Include="images\png\512\CI.png" />
+    <Content Include="images\png\512\CK.png" />
+    <Content Include="images\png\512\CL.png" />
+    <Content Include="images\png\512\CM.png" />
+    <Content Include="images\png\512\CN.png" />
+    <Content Include="images\png\512\CO.png" />
+    <Content Include="images\png\512\CR.png" />
+    <Content Include="images\png\512\CU.png" />
+    <Content Include="images\png\512\CV.png" />
+    <Content Include="images\png\512\CW.png" />
+    <Content Include="images\png\512\CX.png" />
+    <Content Include="images\png\512\CY.png" />
+    <Content Include="images\png\512\CZ.png" />
+    <Content Include="images\png\512\DE.png" />
+    <Content Include="images\png\512\DJ.png" />
+    <Content Include="images\png\512\DK.png" />
+    <Content Include="images\png\512\DM.png" />
+    <Content Include="images\png\512\DO.png" />
+    <Content Include="images\png\512\DZ.png" />
+    <Content Include="images\png\512\EC.png" />
+    <Content Include="images\png\512\EE.png" />
+    <Content Include="images\png\512\EG.png" />
+    <Content Include="images\png\512\EH.png" />
+    <Content Include="images\png\512\ER.png" />
+    <Content Include="images\png\512\ES.png" />
+    <Content Include="images\png\512\ET.png" />
+    <Content Include="images\png\512\EU.png" />
+    <Content Include="images\png\512\FI.png" />
+    <Content Include="images\png\512\FJ.png" />
+    <Content Include="images\png\512\FK.png" />
+    <Content Include="images\png\512\FM.png" />
+    <Content Include="images\png\512\FO.png" />
+    <Content Include="images\png\512\FR.png" />
+    <Content Include="images\png\512\GA.png" />
+    <Content Include="images\png\512\GB.png" />
+    <Content Include="images\png\512\GD.png" />
+    <Content Include="images\png\512\GE.png" />
+    <Content Include="images\png\512\GF.png" />
+    <Content Include="images\png\512\GG.png" />
+    <Content Include="images\png\512\GH.png" />
+    <Content Include="images\png\512\GI.png" />
+    <Content Include="images\png\512\GL.png" />
+    <Content Include="images\png\512\GM.png" />
+    <Content Include="images\png\512\GN.png" />
+    <Content Include="images\png\512\GP.png" />
+    <Content Include="images\png\512\GQ.png" />
+    <Content Include="images\png\512\GR.png" />
+    <Content Include="images\png\512\GS.png" />
+    <Content Include="images\png\512\GT.png" />
+    <Content Include="images\png\512\GU.png" />
+    <Content Include="images\png\512\GW.png" />
+    <Content Include="images\png\512\GY.png" />
+    <Content Include="images\png\512\HK.png" />
+    <Content Include="images\png\512\HM.png" />
+    <Content Include="images\png\512\HN.png" />
+    <Content Include="images\png\512\HR.png" />
+    <Content Include="images\png\512\HT.png" />
+    <Content Include="images\png\512\HU.png" />
+    <Content Include="images\png\512\ID.png" />
+    <Content Include="images\png\512\IE.png" />
+    <Content Include="images\png\512\IL.png" />
+    <Content Include="images\png\512\IM.png" />
+    <Content Include="images\png\512\IN.png" />
+    <Content Include="images\png\512\IO.png" />
+    <Content Include="images\png\512\IQ.png" />
+    <Content Include="images\png\512\IR.png" />
+    <Content Include="images\png\512\IS.png" />
+    <Content Include="images\png\512\IT.png" />
+    <Content Include="images\png\512\JE.png" />
+    <Content Include="images\png\512\JM.png" />
+    <Content Include="images\png\512\JO.png" />
+    <Content Include="images\png\512\JP.png" />
+    <Content Include="images\png\512\KE.png" />
+    <Content Include="images\png\512\KG.png" />
+    <Content Include="images\png\512\KH.png" />
+    <Content Include="images\png\512\KI.png" />
+    <Content Include="images\png\512\KM.png" />
+    <Content Include="images\png\512\KN.png" />
+    <Content Include="images\png\512\KP.png" />
+    <Content Include="images\png\512\KR.png" />
+    <Content Include="images\png\512\KW.png" />
+    <Content Include="images\png\512\KY.png" />
+    <Content Include="images\png\512\KZ.png" />
+    <Content Include="images\png\512\LA.png" />
+    <Content Include="images\png\512\LB.png" />
+    <Content Include="images\png\512\LC.png" />
+    <Content Include="images\png\512\LI.png" />
+    <Content Include="images\png\512\LK.png" />
+    <Content Include="images\png\512\LR.png" />
+    <Content Include="images\png\512\LS.png" />
+    <Content Include="images\png\512\LT.png" />
+    <Content Include="images\png\512\LU.png" />
+    <Content Include="images\png\512\LV.png" />
+    <Content Include="images\png\512\LY.png" />
+    <Content Include="images\png\512\MA.png" />
+    <Content Include="images\png\512\MC.png" />
+    <Content Include="images\png\512\MD.png" />
+    <Content Include="images\png\512\ME.png" />
+    <Content Include="images\png\512\MF.png" />
+    <Content Include="images\png\512\MG.png" />
+    <Content Include="images\png\512\MH.png" />
+    <Content Include="images\png\512\MK.png" />
+    <Content Include="images\png\512\ML.png" />
+    <Content Include="images\png\512\MM.png" />
+    <Content Include="images\png\512\MN.png" />
+    <Content Include="images\png\512\MO.png" />
+    <Content Include="images\png\512\MP.png" />
+    <Content Include="images\png\512\MQ.png" />
+    <Content Include="images\png\512\MR.png" />
+    <Content Include="images\png\512\MS.png" />
+    <Content Include="images\png\512\MT.png" />
+    <Content Include="images\png\512\MU.png" />
+    <Content Include="images\png\512\MV.png" />
+    <Content Include="images\png\512\MW.png" />
+    <Content Include="images\png\512\MX.png" />
+    <Content Include="images\png\512\MY.png" />
+    <Content Include="images\png\512\MZ.png" />
+    <Content Include="images\png\512\NA.png" />
+    <Content Include="images\png\512\NC.png" />
+    <Content Include="images\png\512\NE.png" />
+    <Content Include="images\png\512\NF.png" />
+    <Content Include="images\png\512\NG.png" />
+    <Content Include="images\png\512\NI.png" />
+    <Content Include="images\png\512\NL.png" />
+    <Content Include="images\png\512\NO.png" />
+    <Content Include="images\png\512\NP.png" />
+    <Content Include="images\png\512\NR.png" />
+    <Content Include="images\png\512\NU.png" />
+    <Content Include="images\png\512\NZ.png" />
+    <Content Include="images\png\512\OM.png" />
+    <Content Include="images\png\512\PA.png" />
+    <Content Include="images\png\512\PE.png" />
+    <Content Include="images\png\512\PF.png" />
+    <Content Include="images\png\512\PG.png" />
+    <Content Include="images\png\512\PH.png" />
+    <Content Include="images\png\512\PK.png" />
+    <Content Include="images\png\512\PL.png" />
+    <Content Include="images\png\512\PM.png" />
+    <Content Include="images\png\512\PN.png" />
+    <Content Include="images\png\512\PR.png" />
+    <Content Include="images\png\512\PS.png" />
+    <Content Include="images\png\512\PT.png" />
+    <Content Include="images\png\512\PW.png" />
+    <Content Include="images\png\512\PY.png" />
+    <Content Include="images\png\512\QA.png" />
+    <Content Include="images\png\512\RE.png" />
+    <Content Include="images\png\512\RO.png" />
+    <Content Include="images\png\512\RS.png" />
+    <Content Include="images\png\512\RU.png" />
+    <Content Include="images\png\512\RW.png" />
+    <Content Include="images\png\512\SA.png" />
+    <Content Include="images\png\512\SB.png" />
+    <Content Include="images\png\512\SC.png" />
+    <Content Include="images\png\512\SD.png" />
+    <Content Include="images\png\512\SE.png" />
+    <Content Include="images\png\512\SG.png" />
+    <Content Include="images\png\512\SH.png" />
+    <Content Include="images\png\512\SI.png" />
+    <Content Include="images\png\512\SJ.png" />
+    <Content Include="images\png\512\SK.png" />
+    <Content Include="images\png\512\SL.png" />
+    <Content Include="images\png\512\SM.png" />
+    <Content Include="images\png\512\SN.png" />
+    <Content Include="images\png\512\SO.png" />
+    <Content Include="images\png\512\SR.png" />
+    <Content Include="images\png\512\SS.png" />
+    <Content Include="images\png\512\ST.png" />
+    <Content Include="images\png\512\SV.png" />
+    <Content Include="images\png\512\SX.png" />
+    <Content Include="images\png\512\SY.png" />
+    <Content Include="images\png\512\SZ.png" />
+    <Content Include="images\png\512\TC.png" />
+    <Content Include="images\png\512\TD.png" />
+    <Content Include="images\png\512\TF.png" />
+    <Content Include="images\png\512\TG.png" />
+    <Content Include="images\png\512\TH.png" />
+    <Content Include="images\png\512\TJ.png" />
+    <Content Include="images\png\512\TK.png" />
+    <Content Include="images\png\512\TL.png" />
+    <Content Include="images\png\512\TM.png" />
+    <Content Include="images\png\512\TN.png" />
+    <Content Include="images\png\512\TO.png" />
+    <Content Include="images\png\512\TR.png" />
+    <Content Include="images\png\512\TT.png" />
+    <Content Include="images\png\512\TV.png" />
+    <Content Include="images\png\512\TW.png" />
+    <Content Include="images\png\512\TZ.png" />
+    <Content Include="images\png\512\UA.png" />
+    <Content Include="images\png\512\UG.png" />
+    <Content Include="images\png\512\UM.png" />
+    <Content Include="images\png\512\US.png" />
+    <Content Include="images\png\512\UY.png" />
+    <Content Include="images\png\512\UZ.png" />
+    <Content Include="images\png\512\VA.png" />
+    <Content Include="images\png\512\VC.png" />
+    <Content Include="images\png\512\VE.png" />
+    <Content Include="images\png\512\VG.png" />
+    <Content Include="images\png\512\VI.png" />
+    <Content Include="images\png\512\VN.png" />
+    <Content Include="images\png\512\VU.png" />
+    <Content Include="images\png\512\WF.png" />
+    <Content Include="images\png\512\WS.png" />
+    <Content Include="images\png\512\XK.png" />
+    <Content Include="images\png\512\YE.png" />
+    <Content Include="images\png\512\YT.png" />
+    <Content Include="images\png\512\ZA.png" />
+    <Content Include="images\png\512\ZM.png" />
+    <Content Include="images\png\512\ZW.png" />
+    <Content Include="images\svg\AD.svg" />
+    <Content Include="images\svg\AE.svg" />
+    <Content Include="images\svg\AF.svg" />
+    <Content Include="images\svg\AG.svg" />
+    <Content Include="images\svg\AI.svg" />
+    <Content Include="images\svg\AL.svg" />
+    <Content Include="images\svg\AM.svg" />
+    <Content Include="images\svg\AO.svg" />
+    <Content Include="images\svg\AQ.svg" />
+    <Content Include="images\svg\AR.svg" />
+    <Content Include="images\svg\AS.svg" />
+    <Content Include="images\svg\AT.svg" />
+    <Content Include="images\svg\AU.svg" />
+    <Content Include="images\svg\AW.svg" />
+    <Content Include="images\svg\AX.svg" />
+    <Content Include="images\svg\AZ.svg" />
+    <Content Include="images\svg\BA.svg" />
+    <Content Include="images\svg\BB.svg" />
+    <Content Include="images\svg\BD.svg" />
+    <Content Include="images\svg\BE.svg" />
+    <Content Include="images\svg\BF.svg" />
+    <Content Include="images\svg\BG.svg" />
+    <Content Include="images\svg\BH.svg" />
+    <Content Include="images\svg\BI.svg" />
+    <Content Include="images\svg\BJ.svg" />
+    <Content Include="images\svg\BL.svg" />
+    <Content Include="images\svg\BM.svg" />
+    <Content Include="images\svg\BN.svg" />
+    <Content Include="images\svg\BO.svg" />
+    <Content Include="images\svg\BQ.svg" />
+    <Content Include="images\svg\BR.svg" />
+    <Content Include="images\svg\BS.svg" />
+    <Content Include="images\svg\BT.svg" />
+    <Content Include="images\svg\BV.svg" />
+    <Content Include="images\svg\BW.svg" />
+    <Content Include="images\svg\BY.svg" />
+    <Content Include="images\svg\BZ.svg" />
+    <Content Include="images\svg\CA.svg" />
+    <Content Include="images\svg\CC.svg" />
+    <Content Include="images\svg\CD.svg" />
+    <Content Include="images\svg\CF.svg" />
+    <Content Include="images\svg\CG.svg" />
+    <Content Include="images\svg\CH.svg" />
+    <Content Include="images\svg\CI.svg" />
+    <Content Include="images\svg\CK.svg" />
+    <Content Include="images\svg\CL.svg" />
+    <Content Include="images\svg\CM.svg" />
+    <Content Include="images\svg\CN.svg" />
+    <Content Include="images\svg\CO.svg" />
+    <Content Include="images\svg\CR.svg" />
+    <Content Include="images\svg\CU.svg" />
+    <Content Include="images\svg\CV.svg" />
+    <Content Include="images\svg\CW.svg" />
+    <Content Include="images\svg\CX.svg" />
+    <Content Include="images\svg\CY.svg" />
+    <Content Include="images\svg\CZ.svg" />
+    <Content Include="images\svg\DE.svg" />
+    <Content Include="images\svg\DJ.svg" />
+    <Content Include="images\svg\DK.svg" />
+    <Content Include="images\svg\DM.svg" />
+    <Content Include="images\svg\DO.svg" />
+    <Content Include="images\svg\DZ.svg" />
+    <Content Include="images\svg\EC.svg" />
+    <Content Include="images\svg\EE.svg" />
+    <Content Include="images\svg\EG.svg" />
+    <Content Include="images\svg\EH.svg" />
+    <Content Include="images\svg\ER.svg" />
+    <Content Include="images\svg\ES.svg" />
+    <Content Include="images\svg\ET.svg" />
+    <Content Include="images\svg\FI.svg" />
+    <Content Include="images\svg\FJ.svg" />
+    <Content Include="images\svg\FK.svg" />
+    <Content Include="images\svg\FM.svg" />
+    <Content Include="images\svg\FO.svg" />
+    <Content Include="images\svg\FR.svg" />
+    <Content Include="images\svg\GA.svg" />
+    <Content Include="images\svg\GB.svg" />
+    <Content Include="images\svg\GD.svg" />
+    <Content Include="images\svg\GE.svg" />
+    <Content Include="images\svg\GF.svg" />
+    <Content Include="images\svg\GG.svg" />
+    <Content Include="images\svg\GH.svg" />
+    <Content Include="images\svg\GI.svg" />
+    <Content Include="images\svg\GL.svg" />
+    <Content Include="images\svg\GM.svg" />
+    <Content Include="images\svg\GN.svg" />
+    <Content Include="images\svg\GP.svg" />
+    <Content Include="images\svg\GQ.svg" />
+    <Content Include="images\svg\GR.svg" />
+    <Content Include="images\svg\GS.svg" />
+    <Content Include="images\svg\GT.svg" />
+    <Content Include="images\svg\GU.svg" />
+    <Content Include="images\svg\GW.svg" />
+    <Content Include="images\svg\GY.svg" />
+    <Content Include="images\svg\HK.svg" />
+    <Content Include="images\svg\HM.svg" />
+    <Content Include="images\svg\HN.svg" />
+    <Content Include="images\svg\HR.svg" />
+    <Content Include="images\svg\HT.svg" />
+    <Content Include="images\svg\HU.svg" />
+    <Content Include="images\svg\ID.svg" />
+    <Content Include="images\svg\IE.svg" />
+    <Content Include="images\svg\IL.svg" />
+    <Content Include="images\svg\IM.svg" />
+    <Content Include="images\svg\IN.svg" />
+    <Content Include="images\svg\IO.svg" />
+    <Content Include="images\svg\IQ.svg" />
+    <Content Include="images\svg\IR.svg" />
+    <Content Include="images\svg\IS.svg" />
+    <Content Include="images\svg\IT.svg" />
+    <Content Include="images\svg\JE.svg" />
+    <Content Include="images\svg\JM.svg" />
+    <Content Include="images\svg\JO.svg" />
+    <Content Include="images\svg\JP.svg" />
+    <Content Include="images\svg\KE.svg" />
+    <Content Include="images\svg\KG.svg" />
+    <Content Include="images\svg\KH.svg" />
+    <Content Include="images\svg\KI.svg" />
+    <Content Include="images\svg\KM.svg" />
+    <Content Include="images\svg\KN.svg" />
+    <Content Include="images\svg\KP.svg" />
+    <Content Include="images\svg\KR.svg" />
+    <Content Include="images\svg\KW.svg" />
+    <Content Include="images\svg\KY.svg" />
+    <Content Include="images\svg\KZ.svg" />
+    <Content Include="images\svg\LA.svg" />
+    <Content Include="images\svg\LB.svg" />
+    <Content Include="images\svg\LC.svg" />
+    <Content Include="images\svg\LI.svg" />
+    <Content Include="images\svg\LK.svg" />
+    <Content Include="images\svg\LR.svg" />
+    <Content Include="images\svg\LS.svg" />
+    <Content Include="images\svg\LT.svg" />
+    <Content Include="images\svg\LU.svg" />
+    <Content Include="images\svg\LV.svg" />
+    <Content Include="images\svg\LY.svg" />
+    <Content Include="images\svg\MA.svg" />
+    <Content Include="images\svg\MC.svg" />
+    <Content Include="images\svg\MD.svg" />
+    <Content Include="images\svg\ME.svg" />
+    <Content Include="images\svg\MF.svg" />
+    <Content Include="images\svg\MG.svg" />
+    <Content Include="images\svg\MH.svg" />
+    <Content Include="images\svg\MK.svg" />
+    <Content Include="images\svg\ML.svg" />
+    <Content Include="images\svg\MM.svg" />
+    <Content Include="images\svg\MN.svg" />
+    <Content Include="images\svg\MO.svg" />
+    <Content Include="images\svg\MP.svg" />
+    <Content Include="images\svg\MQ.svg" />
+    <Content Include="images\svg\MR.svg" />
+    <Content Include="images\svg\MS.svg" />
+    <Content Include="images\svg\MT.svg" />
+    <Content Include="images\svg\MU.svg" />
+    <Content Include="images\svg\MV.svg" />
+    <Content Include="images\svg\MW.svg" />
+    <Content Include="images\svg\MX.svg" />
+    <Content Include="images\svg\MY.svg" />
+    <Content Include="images\svg\MZ.svg" />
+    <Content Include="images\svg\NA.svg" />
+    <Content Include="images\svg\NC.svg" />
+    <Content Include="images\svg\NE.svg" />
+    <Content Include="images\svg\NF.svg" />
+    <Content Include="images\svg\NG.svg" />
+    <Content Include="images\svg\NI.svg" />
+    <Content Include="images\svg\NL.svg" />
+    <Content Include="images\svg\NO.svg" />
+    <Content Include="images\svg\NP.svg" />
+    <Content Include="images\svg\NR.svg" />
+    <Content Include="images\svg\NU.svg" />
+    <Content Include="images\svg\NZ.svg" />
+    <Content Include="images\svg\OM.svg" />
+    <Content Include="images\svg\PA.svg" />
+    <Content Include="images\svg\PE.svg" />
+    <Content Include="images\svg\PF.svg" />
+    <Content Include="images\svg\PG.svg" />
+    <Content Include="images\svg\PH.svg" />
+    <Content Include="images\svg\PK.svg" />
+    <Content Include="images\svg\PL.svg" />
+    <Content Include="images\svg\PM.svg" />
+    <Content Include="images\svg\PN.svg" />
+    <Content Include="images\svg\PR.svg" />
+    <Content Include="images\svg\PS.svg" />
+    <Content Include="images\svg\PT.svg" />
+    <Content Include="images\svg\PW.svg" />
+    <Content Include="images\svg\PY.svg" />
+    <Content Include="images\svg\QA.svg" />
+    <Content Include="images\svg\RE.svg" />
+    <Content Include="images\svg\RO.svg" />
+    <Content Include="images\svg\RS.svg" />
+    <Content Include="images\svg\RU.svg" />
+    <Content Include="images\svg\RW.svg" />
+    <Content Include="images\svg\SA.svg" />
+    <Content Include="images\svg\SB.svg" />
+    <Content Include="images\svg\SC.svg" />
+    <Content Include="images\svg\SD.svg" />
+    <Content Include="images\svg\SE.svg" />
+    <Content Include="images\svg\SG.svg" />
+    <Content Include="images\svg\SH.svg" />
+    <Content Include="images\svg\SI.svg" />
+    <Content Include="images\svg\SJ.svg" />
+    <Content Include="images\svg\SK.svg" />
+    <Content Include="images\svg\SL.svg" />
+    <Content Include="images\svg\SM.svg" />
+    <Content Include="images\svg\SN.svg" />
+    <Content Include="images\svg\SO.svg" />
+    <Content Include="images\svg\SR.svg" />
+    <Content Include="images\svg\SS.svg" />
+    <Content Include="images\svg\ST.svg" />
+    <Content Include="images\svg\SV.svg" />
+    <Content Include="images\svg\SX.svg" />
+    <Content Include="images\svg\SY.svg" />
+    <Content Include="images\svg\SZ.svg" />
+    <Content Include="images\svg\TC.svg" />
+    <Content Include="images\svg\TD.svg" />
+    <Content Include="images\svg\TF.svg" />
+    <Content Include="images\svg\TG.svg" />
+    <Content Include="images\svg\TH.svg" />
+    <Content Include="images\svg\TJ.svg" />
+    <Content Include="images\svg\TK.svg" />
+    <Content Include="images\svg\TL.svg" />
+    <Content Include="images\svg\TM.svg" />
+    <Content Include="images\svg\TN.svg" />
+    <Content Include="images\svg\TO.svg" />
+    <Content Include="images\svg\TR.svg" />
+    <Content Include="images\svg\TT.svg" />
+    <Content Include="images\svg\TV.svg" />
+    <Content Include="images\svg\TW.svg" />
+    <Content Include="images\svg\TZ.svg" />
+    <Content Include="images\svg\UA.svg" />
+    <Content Include="images\svg\UG.svg" />
+    <Content Include="images\svg\UM.svg" />
+    <Content Include="images\svg\US.svg" />
+    <Content Include="images\svg\UY.svg" />
+    <Content Include="images\svg\UZ.svg" />
+    <Content Include="images\svg\VA.svg" />
+    <Content Include="images\svg\VC.svg" />
+    <Content Include="images\svg\VE.svg" />
+    <Content Include="images\svg\VG.svg" />
+    <Content Include="images\svg\VI.svg" />
+    <Content Include="images\svg\VN.svg" />
+    <Content Include="images\svg\VU.svg" />
+    <Content Include="images\svg\WF.svg" />
+    <Content Include="images\svg\WS.svg" />
+    <Content Include="images\svg\XK.svg" />
+    <Content Include="images\svg\YE.svg" />
+    <Content Include="images\svg\YT.svg" />
+    <Content Include="images\svg\ZA.svg" />
+    <Content Include="images\svg\ZM.svg" />
+    <Content Include="images\svg\ZW.svg" />
+    <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="image.ashx.cs">
+      <DependentUpon>image.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58862</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58862/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

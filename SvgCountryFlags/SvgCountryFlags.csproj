@@ -59,7 +59,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="GeoData.rar" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -71,7 +70,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="optimised.svg" />
+    <Content Include="flagAdditions\additions.txt" />
+    <Content Include="flagAdditions\png\256\XK.png" />
+    <Content Include="flagAdditions\png\512\AS.png" />
+    <Content Include="flagAdditions\png\512\XK.png" />
+    <Content Include="flagAdditions\svg\AS.svg" />
+    <Content Include="flagAdditions\png\256\AS.png" />
+    <Content Include="flagAdditions\png\256\EU.png" />
+    <Content Include="flagAdditions\png\512\EU.png" />
+    <Content Include="flagAdditions\svg\EU.svg" />
+    <Content Include="flagAdditions\svg\XK.svg" />
+    <Content Include="TestRelative.svg" />
+    <Content Include="TestSimple.svg" />
+    <Content Include="TestLink.svg" />
+    <Content Include="TestImage.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
