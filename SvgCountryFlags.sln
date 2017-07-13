@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SvgCountryFlags", "SvgCount
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagCounter", "FlagCounter\FlagCounter.csproj", "{2A9CD9B1-2A0B-4F69-AD68-8F0748B21D10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateInsertUpdateStatement", "CreateInsertUpdateStatement\CreateInsertUpdateStatement.csproj", "{C3EAC18F-9432-4488-AF31-ED94F4493278}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2A9CD9B1-2A0B-4F69-AD68-8F0748B21D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A9CD9B1-2A0B-4F69-AD68-8F0748B21D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A9CD9B1-2A0B-4F69-AD68-8F0748B21D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3EAC18F-9432-4488-AF31-ED94F4493278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3EAC18F-9432-4488-AF31-ED94F4493278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3EAC18F-9432-4488-AF31-ED94F4493278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3EAC18F-9432-4488-AF31-ED94F4493278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
