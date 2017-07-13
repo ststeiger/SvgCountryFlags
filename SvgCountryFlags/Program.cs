@@ -216,7 +216,7 @@ ORDER BY flag
 
 
             string flag = flag512;
-            InsertFlags(flag);
+            // InsertFlags(flag);
 
 
 
@@ -305,9 +305,13 @@ xmlns=""http://www.w3.org/2000/svg"" xmlns:svg=""http://www.w3.org/2000/svg"" xm
             sb.Append(@"
 </svg>");
             string str = sb.ToString();
-            System.IO.File.WriteAllText(@"d:\experimental_img.svg", str, System.Text.Encoding.UTF8);
 
-            
+            if(System.StringComparer.OrdinalIgnoreCase.Equals(System.Environment.UserDomainName, "COR"))
+                System.IO.File.WriteAllText(@"d:\experimental_img.svg", str, System.Text.Encoding.UTF8);
+            else
+                System.IO.File.WriteAllText(@"experimental_img.svg", str, System.Text.Encoding.UTF8);
+
+
             System.Console.WriteLine(System.Environment.NewLine);
             System.Console.WriteLine(" --- Press any key to continue --- ");
             System.Console.ReadKey();

@@ -55,11 +55,11 @@ namespace FlagCounter
                     object obj = cmd.ExecuteScalar();
                     string b64 = System.Convert.ToString(obj);
                     baResult = System.Convert.FromBase64String(b64);
-                }
+                } // End Using cmd 
 
                 if (con.State != System.Data.ConnectionState.Closed)
                     con.Close();
-            }
+            } // End Using con 
 
             return baResult;
         }
@@ -67,6 +67,12 @@ namespace FlagCounter
 
         public void ProcessRequest(HttpContext context)
         {
+            // save IP/country with img_id
+            // id, img_id, ip_num, country_id
+            // query img_id - group by country
+            // count country, country_short, count(distinct ip_num)
+            // by usr_language
+
             context.Response.ContentType = "image/png";
 
             string ctry = context.Request.Params["country"];
@@ -79,6 +85,23 @@ namespace FlagCounter
         }
 
 
+        protected string GetIPAddress(System.Web.HttpContext context)
+        {
+            string ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+            if (!string.IsNullOrEmpty(ipAddress))
+            {
+                string[] addresses = ipAddress.Split(',');
+                if (addresses.Length != 0)
+                {
+                    return addresses[0];
+                }
+            }
+
+            return context.Request.ServerVariables["REMOTE_ADDR"];
+        }
+
+
         public bool IsReusable
         {
             get
@@ -86,5 +109,9 @@ namespace FlagCounter
                 return false;
             }
         }
+
+
     }
+
+
 }
