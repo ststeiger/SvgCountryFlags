@@ -54,6 +54,8 @@ namespace CreateInsertUpdateStatement
             // Correct: 
             // INSERT INTO TestTable(some_field) SELECT '37F582A1-7D28-4052-837B-1AB065FDA88A' WHERE 0 = (SELECT COUNT(*) FROM TestTable WHERE some_field = '37F582A1-7D28-4052-837B-1AB065FDA88A') 
 
+            // Better:
+            // INSERT INTO invoices (invoiceid, billed) SELECT '12345', 'TRUE' WHERE NOT EXISTS (SELECT 1 FROM invoices WHERE invoiceid = '12345')
 
 
             string sql = @"
