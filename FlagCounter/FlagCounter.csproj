@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -802,6 +803,8 @@
     <Content Include="images\svg\ZA.svg" />
     <Content Include="images\svg\ZM.svg" />
     <Content Include="images\svg\ZW.svg" />
+    <Content Include="info\headers_dotnetcore.txt" />
+    <Content Include="info\header_names.txt" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />

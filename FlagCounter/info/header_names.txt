@@ -1,0 +1,24 @@
+
+
+https://github.com/aspnet/KestrelHttpServer/issues/961
+context.Connection.RemoteIpAddress;
+context.Connection.RemotePort.ToString();
+
+context.Connection.LocalIpAddress;
+
+
+https://stackoverflow.com/questions/28664686/how-do-i-get-client-ip-address-in-asp-net-core
+https://distinctplace.com/2014/04/23/story-behind-x-forwarded-for-and-x-real-ip-headers/
+X-Forwarded-For: client, proxy1, proxy2[3]
+X-Originating-IP
+x-real-ip
+X-EIP
+X-Real-IP
+X-Original-For
+
+Forwarded: for=192.0.2.60; proto=http; by=203.0.113.43
+X-Forwarded-For: 54.83.132.159, 199.27.72.25, 50.19.19.94
+X-Forwarded-Port: 80
+X-Forwarded-Proto: http
+
+

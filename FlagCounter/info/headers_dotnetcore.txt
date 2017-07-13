@@ -1,0 +1,41 @@
+﻿{
+  "Connection": [
+    "Keep-Alive"
+  ],
+  "Accept": [
+    "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+  ],
+  "Accept-Encoding": [
+    "gzip, deflate, br"
+  ],
+  "Accept-Language": [
+    "de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4"
+  ],
+  "Cookie": [
+    "foobr=CfDJ8PHZHbyx0zhDsF-dCbIHau-HOp4b0tqoVwzZjquCuWavNX9e-13Fm5y7LFesJG58-Gu15gacj9HsVuG07bEbnROTLYGQBdKaOoJGfREf-2BD3fJBLUK9yJ6NVUqLPxvikFipwgqa03dDvr3Q4OVHpgs"
+  ],
+  "Host": [
+    "localhost:52257"
+  ],
+  "Referer": [
+    "http://localhost:52257/DE/Contact/Index/"
+  ],
+  "User-Agent": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"
+  ],
+  "Upgrade-Insecure-Requests": [
+    "1"
+  ],
+  "MS-ASPNETCORE-TOKEN": [
+    "4f18fa93-b442-4be3-989c-12154d4c51ec"
+  ],
+  "X-Original-Proto": [
+    "http"
+  ],
+  "i'm a stooge": [
+    "stooge"
+  ],
+  "X-Original-For": [
+    "127.0.0.1:60992"
+  ]
+}
