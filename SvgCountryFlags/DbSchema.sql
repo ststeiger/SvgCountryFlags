@@ -1,7 +1,8 @@
 
 IF  NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[countries]') AND type in (N'U'))
 EXECUTE('
-CREATE TABLE [dbo].[countries](
+CREATE TABLE [dbo].[countries]
+(
 	[id] [bigint] NULL,
 	[Country] [nvarchar](100) NULL,
 	[A2] [nvarchar](10) NULL,
@@ -17,7 +18,8 @@ GO
 
 IF  NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[flags]') AND type in (N'U'))
 EXECUTE('
-CREATE TABLE [dbo].[flags](
+CREATE TABLE [dbo].[flags]
+(
 	[flag] [nvarchar](10) NULL,
 	[country] [nvarchar](10) NULL,
 	[country_id] [bigint] NULL,
@@ -33,17 +35,18 @@ GO
 
 IF  NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[geoip].[geoip_locations_temp]') AND type in (N'U'))
 EXECUTE('
-CREATE TABLE [geoip].[geoip_locations_temp](
+CREATE TABLE [geoip].[geoip_locations_temp]
+(
 	[geoname_id] [bigint] NOT NULL,
 	[locale_code] [varchar](2) NOT NULL,
 	[continent_code] [varchar](2) NULL,
 	[continent_name] [varchar](15) NULL,
 	[country_iso_code] [varchar](2) NULL,
 	[country_name] [varchar](50) NULL,
- CONSTRAINT [PK_geoip_locations_temp] PRIMARY KEY CLUSTERED 
-(
-	[geoname_id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+	CONSTRAINT [PK_geoip_locations_temp] PRIMARY KEY CLUSTERED 
+	(
+		[geoname_id] ASC
+	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 ')
 
@@ -88,7 +91,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [geoip].[geoip_blocks_temp](
+CREATE TABLE [geoip].[geoip_blocks_temp]
+(
 	[network] [varchar](32) NOT NULL,
 	[geoname_id] [bigint] NULL,
 	[registered_country_geoname_id] [bigint] NULL,
@@ -99,10 +103,10 @@ CREATE TABLE [geoip].[geoip_blocks_temp](
 	[upper_boundary] [varchar](39) NOT NULL,
 	[lower_boundary_int] [bigint] NULL,
 	[upper_boundary_int] [bigint] NULL,
- CONSTRAINT [PK_geoip_blocks_temp] PRIMARY KEY CLUSTERED 
-(
-	[network] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+	CONSTRAINT [PK_geoip_blocks_temp] PRIMARY KEY CLUSTERED 
+	(
+		[network] ASC
+	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO

@@ -91,10 +91,28 @@ WHERE [flag] = @iso_country2
 
 
 
-
-        public static System.Data.DataTable GetFlags(double dimMin)
+        public class FlagCount
         {
-            System.Data.DataTable dt = new System.Data.DataTable();
+            public string flag;
+            public int wRedim;
+            public int hRedim;
+            public int flagCount;
+            public string b64;
+            public string country_name;
+        }
+
+
+
+        public static System.Collections.Generic.List<FlagCount> GetFlags_old(double dimMin)
+        {
+            System.Collections.Generic.List<FlagCount> ls = new System.Collections.Generic.List<FlagCount>();
+
+            //CoreDb.LinqHelper.GetGetter<FlagCount>("");
+            //CoreDb.LinqHelper.GetSetter<FlagCount>("");
+
+            //CoreDb.LinqHelper.GetGetters<FlagCount>();
+            //CoreDb.LinqHelper.GetSetters<FlagCount>();
+
 
             string sql = @"
 
@@ -172,23 +190,190 @@ ORDER BY flag
                     width.DbType = System.Data.DbType.Double;
                     cmd.Parameters.Add(width);
 
-
-                    using (System.Data.Common.DbDataAdapter da = new System.Data.SqlClient.SqlDataAdapter((System.Data.SqlClient.SqlCommand)cmd))
+                    using (System.Data.Common.DbDataReader idr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection
+                        | System.Data.CommandBehavior.SequentialAccess))
                     {
-                        da.Fill(dt);
-                    }
+                        int fieldCount = idr.FieldCount;
+                        string[] fields = new string[fieldCount];
+                        // CoreDb.Getter_t<FlagCount>[] getters = new CoreDb.Getter_t<FlagCount>[fieldCount];
+                        CoreDb.Setter_t<FlagCount>[] setters = new CoreDb.Setter_t<FlagCount>[fieldCount];
 
-                }
+
+                        for (int i = 0; i < fieldCount; ++i)
+                        {
+                            fields[i] = idr.GetName(i);
+                            // getters[i] = CoreDb.LinqHelper.GetGetter<FlagCount>(fields[i]);
+                            setters[i] = CoreDb.LinqHelper.GetSetter<FlagCount>(fields[i]);
+                        } // Next i
+
+                        while (idr.Read())
+                        {
+                            FlagCount tThisValue = System.Activator.CreateInstance<FlagCount>();
+
+                            for (int i = 0; i < fieldCount; ++i)
+                            {
+
+                                if (setters[i] != null)
+                                {
+                                    object value = idr.GetValue(i);
+                                    setters[i](tThisValue, value);
+                                } // End if (setters[i] != null) 
+
+                            } // Next i 
+
+                            ls.Add(tThisValue);
+                        } // Whend 
+
+                    } // End Using idr 
+
+                } // End Using cmd 
 
                 if (con.State != System.Data.ConnectionState.Closed)
                     con.Close();
-            }
+            } // End Using con 
 
-            return dt;
+            return ls;
         }
 
 
 
+        // ----------------------------------
+
+        public static System.Collections.Generic.List<FlagCount> GetFlags(double dimMin)
+        {
+            System.Collections.Generic.List<FlagCount> ls = new System.Collections.Generic.List<FlagCount>();
+
+            string sql = @"
+
+-- DECLARE @dimMin float
+-- SET @dimMin = 30.0 
+
+
+;WITH CTE AS 
+(
+	SELECT
+		 flag
+		,country
+		,country_id
+		,width
+		,height
+		,b64
+		
+		,@dimMin/width AS rW
+		,@dimMin/height AS rH
+		
+		,
+		CASE
+			WHEN @dimMin/width > @dimMin/height THEN @dimMin/width 
+			ELSE @dimMin/height
+		END AS rMAX
+		
+		,
+		CASE
+			WHEN @dimMin/width > @dimMin/height THEN @dimMin/height
+			ELSE @dimMin/width
+		END AS rMIN
+		
+        --,geoip_locations_temp.continent_name
+	    --,geoip_locations_temp.country_iso_code
+	    ,geoip_locations_temp.country_name 
+	FROM flags 
+    
+    LEFT JOIN geoip.geoip_locations_temp
+	    ON geoip_locations_temp.country_iso_code = FLAGS.flag  
+)
+SELECT 
+	 flag
+	,country
+	,country_id
+	,width
+	,height
+	--,CEILING(width * rMIN) AS wRedim
+	--,CEILING(height * rMIN) AS hRedim 
+	
+	,CAST(ROUND(width * rMIN, 0) AS integer) AS wRedim
+	,CAST(ROUND(height * rMIN, 0) AS integer) AS hRedim
+	
+	,b64
+	--,ABS(CHECKSUM(NEWID())) % (10+1 -0) + 0 AS rn 
+	,ABS(CHECKSUM(NEWID())) % (150+1 -2) + 2 AS flagCount 
+	,country_name 
+FROM CTE 
+WHERE flag IN ('NL', 'CH', 'AD', 'FR', 'IT', 'NP')
+ORDER BY flag 
+";
+
+            using (System.Data.Common.DbCommand cmd = GetConnection().CreateCommand())
+            {
+                cmd.CommandText = sql;
+
+                // dimMin
+                System.Data.Common.DbParameter width = cmd.CreateParameter();
+                width.ParameterName = "@dimMin";
+                width.Value = dimMin;
+                width.DbType = System.Data.DbType.Double;
+                cmd.Parameters.Add(width);
+                    
+                ls = GetList<FlagCount>(cmd);
+            } // End Using cmd 
+
+            return ls;
+        }
+
+
+        public static System.Collections.Generic.List<T> GetList<T>(System.Data.Common.DbCommand cmd)
+        {
+            System.Collections.Generic.List<T> ls = new System.Collections.Generic.List<T>();
+
+            using (System.Data.Common.DbConnection con = GetConnection())
+            {
+                if (con.State != System.Data.ConnectionState.Open)
+                    con.Open();
+
+                cmd.Connection = con;
+
+                using (System.Data.Common.DbDataReader idr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection
+                    | System.Data.CommandBehavior.SequentialAccess))
+                {
+                    int fieldCount = idr.FieldCount;
+                    string[] fields = new string[fieldCount];
+                    // CoreDb.Getter_t<T>[] getters = new CoreDb.Getter_t<T>[fieldCount];
+                    CoreDb.Setter_t<T>[] setters = new CoreDb.Setter_t<T>[fieldCount];
+
+
+                    for (int i = 0; i < fieldCount; ++i)
+                    {
+                        fields[i] = idr.GetName(i);
+                        // getters[i] = CoreDb.LinqHelper.GetGetter<T>(fields[i]);
+                        setters[i] = CoreDb.LinqHelper.GetSetter<T>(fields[i]);
+                    } // Next i
+
+                    while (idr.Read())
+                    {
+                        T tThisValue = System.Activator.CreateInstance<T>();
+
+                        for (int i = 0; i < fieldCount; ++i)
+                        {
+
+                            if (setters[i] != null)
+                            {
+                                object value = idr.GetValue(i);
+                                setters[i](tThisValue, value);
+                            } // End if (setters[i] != null) 
+
+                        } // Next i 
+
+                        ls.Add(tThisValue);
+                    } // Whend 
+
+                } // End Using idr 
+
+                if (con.State != System.Data.ConnectionState.Closed)
+                    con.Close();
+            } // End Using con 
+
+            return ls;
+        }
 
 
         /// <summary>
@@ -260,16 +445,14 @@ xmlns=""http://www.w3.org/2000/svg"" xmlns:svg=""http://www.w3.org/2000/svg"" xm
 ";
             sb.Append(svgPre);
 
-            foreach (System.Data.DataRow dr in GetFlags(30.0).Rows)
-            { 
-                string iso_name = System.Convert.ToString(dr["flag"]);
-                int w = System.Convert.ToInt32(dr["wRedim"]);
-                int h = System.Convert.ToInt32(dr["hRedim"]);
-                int flagCount = System.Convert.ToInt32(dr["flagCount"]);
-                string b64 = System.Convert.ToString(dr["b64"]);
-                string country_name = System.Convert.ToString(dr["country_name"]);
-                
-
+            foreach (FlagCount thisFlag in GetFlags(30.0))
+            {
+                string iso_name = thisFlag.flag;
+                int w = thisFlag.wRedim;
+                int h = thisFlag.hRedim;
+                int flagCount = thisFlag.flagCount;
+                string b64 = thisFlag.b64;
+                string country_name = thisFlag.country_name;
 
 
                 string thisEntry = svgCountryTemplate;

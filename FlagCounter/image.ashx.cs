@@ -4,11 +4,15 @@ using System.Web;
 
 namespace FlagCounter
 {
+
+
     /// <summary>
     /// Zusammenfassungsbeschreibung für image
     /// </summary>
     public class image : IHttpHandler
     {
+
+
         public static System.Data.Common.DbConnection GetConnection()
         {
             System.Data.SqlClient.SqlConnectionStringBuilder csb = new System.Data.SqlClient.SqlConnectionStringBuilder();
