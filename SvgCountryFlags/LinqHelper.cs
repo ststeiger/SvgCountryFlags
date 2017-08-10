@@ -14,7 +14,7 @@ namespace CoreDb
 
         private static System.Reflection.MethodInfo m_FlexibleChangeType;
 
-        private static object FlexibleChangeType(object objVal, System.Type targetType)
+        public static object FlexibleChangeType(object objVal, System.Type targetType)
         {
             System.Reflection.TypeInfo ti = System.Reflection.IntrospectionExtensions.GetTypeInfo(targetType);
             bool typeIsNullable = (ti.IsGenericType && object.ReferenceEquals(targetType.GetGenericTypeDefinition(), typeof(System.Nullable<>)));

@@ -321,6 +321,48 @@ ORDER BY flag
         }
 
 
+
+
+
+
+        // Anything else than a struct or a class
+        public static bool IsSimpleType(System.Type tThisType)
+        {
+
+            if (System.Reflection.IntrospectionExtensions.GetTypeInfo(tThisType).IsPrimitive)
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(tThisType, typeof(System.String)))
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(tThisType, typeof(System.DateTime)))
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(tThisType, typeof(System.Guid)))
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(tThisType, typeof(System.Decimal)))
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(tThisType, typeof(System.Object)))
+            {
+                return true;
+            }
+
+            return false;
+        } // End Function IsSimpleType
+
+
         public static System.Collections.Generic.List<T> GetList<T>(System.Data.Common.DbCommand cmd)
         {
             System.Collections.Generic.List<T> ls = new System.Collections.Generic.List<T>();
@@ -335,38 +377,55 @@ ORDER BY flag
                 using (System.Data.Common.DbDataReader idr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection
                     | System.Data.CommandBehavior.SequentialAccess))
                 {
-                    int fieldCount = idr.FieldCount;
-                    string[] fields = new string[fieldCount];
-                    // CoreDb.Getter_t<T>[] getters = new CoreDb.Getter_t<T>[fieldCount];
-                    CoreDb.Setter_t<T>[] setters = new CoreDb.Setter_t<T>[fieldCount];
 
 
-                    for (int i = 0; i < fieldCount; ++i)
+
+                    if (IsSimpleType(typeof(T)))
                     {
-                        fields[i] = idr.GetName(i);
-                        // getters[i] = CoreDb.LinqHelper.GetGetter<T>(fields[i]);
-                        setters[i] = CoreDb.LinqHelper.GetSetter<T>(fields[i]);
-                    } // Next i
+                        while (idr.Read())
+                        {
+                            object value = idr.GetValue(0);
+                            ls.Add((T)CoreDb.LinqHelper.FlexibleChangeType(value, typeof(T)));
+                        } // End while (idr.Read())
 
-                    while (idr.Read())
+                    } // End if (IsSimpleType(typeof(T)))
+                    else
                     {
-                        T tThisValue = System.Activator.CreateInstance<T>();
+
+                        int fieldCount = idr.FieldCount;
+                        // string[] fields = new string[fieldCount];
+                        // CoreDb.Getter_t<T>[] getters = new CoreDb.Getter_t<T>[fieldCount];
+                        CoreDb.Setter_t<T>[] setters = new CoreDb.Setter_t<T>[fieldCount];
+
 
                         for (int i = 0; i < fieldCount; ++i)
                         {
+                            string name = idr.GetName(i);
+                            // getters[i] = CoreDb.LinqHelper.GetGetter<T>(name);
+                            setters[i] = CoreDb.LinqHelper.GetSetter<T>(name);
+                        } // Next i
 
-                            if (setters[i] != null)
+                        while (idr.Read())
+                        {
+                            T tThisValue = System.Activator.CreateInstance<T>();
+
+                            for (int i = 0; i < fieldCount; ++i)
                             {
-                                object value = idr.GetValue(i);
-                                setters[i](tThisValue, value);
-                            } // End if (setters[i] != null) 
 
-                        } // Next i 
+                                if (setters[i] != null)
+                                {
+                                    object value = idr.GetValue(i);
+                                    setters[i](tThisValue, value);
+                                } // End if (setters[i] != null) 
 
-                        ls.Add(tThisValue);
-                    } // Whend 
+                            } // Next i 
 
-                } // End Using idr 
+                            ls.Add(tThisValue);
+                        } // Whend 
+
+                    } // End Using idr 
+
+                } // End Else of if (IsSimpleType(typeof(T)))
 
                 if (con.State != System.Data.ConnectionState.Closed)
                     con.Close();
